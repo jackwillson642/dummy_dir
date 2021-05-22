@@ -22,16 +22,15 @@ for i in acad_dirs_list: # Copying contents of Acad_Versions/2011 to /Resources/
     shutil.copytree(src_dir, des_dir, copy_function = shutil.copy, dirs_exist_ok=True)
     print("Contents of Acad_Versions/"+i+" copied to DF_"+i+"/ra/Resources/")
 
-print()
-for i in new_dir_list: #
-    shutil.make_archive(i, "zip", i)
-    print(i +" compressed into " + i + ".zip")
-
 import datetime as dt
 
 x = dt.datetime.now()
 
 datetime_file_name = x.strftime("%d") +"-"+ x.strftime("%m") +"-"+ x.strftime("%y") +"_"+ x.strftime("%H") +"-"+ x.strftime("%M") + ".txt"
-print()
 for i in new_dir_list:
     open("./"+i+"/"+datetime_file_name, "x") # Creating a file with the time stamp as the file name. Doesn't work if the file already exists.
+
+print()
+for i in new_dir_list: # Creating zip file
+    shutil.make_archive(i, "zip", i)
+    print(i +" compressed into " + i + ".zip")
