@@ -20,6 +20,7 @@
   <component name="ProjectId" id="1stBWuGmY8aR1gliqcG16vOhDCr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -116,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621682053835</updated>
-      <workItem from="1621682055263" duration="13961000" />
+      <workItem from="1621682055263" duration="15123000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Messages added">
       <created>1621683011539</created>
@@ -181,7 +182,28 @@
       <option name="project" value="LOCAL" />
       <updated>1621702704585</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Routine Commit">
+      <created>1621702993873</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621702993873</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Timestamp functionality added">
+      <created>1621703036745</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1621703036745</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Creating zip after adding timestamp instead of before">
+      <created>1621703280262</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1621703280262</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,11 +233,13 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Notification messages improved and RA changed to ra" />
     <MESSAGE value="Routine Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Routine Commit" />
+    <MESSAGE value="Timestamp functionality added" />
+    <MESSAGE value="Creating zip after adding timestamp instead of before" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating zip after adding timestamp instead of before" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/dummy_dir$box.coverage" NAME="box Coverage Results" MODIFIED="1621701841189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dummy_dir$script.coverage" NAME="script Coverage Results" MODIFIED="1621702674610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dummy_dir$script.coverage" NAME="script Coverage Results" MODIFIED="1621703308968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dummy_dir$createzip.coverage" NAME="createzip Coverage Results" MODIFIED="1621690232065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
