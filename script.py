@@ -34,3 +34,4 @@ print()
 for i in new_dir_list: # Creating zip file
     shutil.make_archive(i, "zip", i)
     print(i +" compressed into " + i + ".zip")
+    os.remove("./"+i+"/"+datetime_file_name) # Removing timestamp file after zip creation
