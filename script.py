@@ -23,4 +23,7 @@ for i in acad_dirs_list: # Copying contents of Acad_Versions/2011 to /Resources/
 
 print("Content from version directories copied to 'DF_version/RA/Resources/")
 
-shutil.make_archive("files", "zip", "Acad_Versions")
+print()
+for i in new_dir_list:
+    shutil.make_archive(i, "zip", i)
+    print(i +" compressed into " + i + ".zip")
