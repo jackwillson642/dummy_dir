@@ -9,15 +9,18 @@ for i in acad_dirs_list: # Initializing new_dir_list
     new_dir = "DF_" + i
     new_dir_list.append(new_dir)
 
-for i in new_dir_list:
+for i in new_dir_list: # Copying DF to DF_2011
     des_dir = "./" + i
     shutil.copytree("./DF", des_dir, dirs_exist_ok=True) # dirs_exist_ok=True doesn't break the code if the directories already exist.
 
 print("\n'DF_version' directories created.")
 
 
-for i in acad_dirs_list:
+for i in acad_dirs_list: # Copying contents of Acad_Versions/2011 to /Resources/
     src_dir = "./Acad_Versions/" + i
     des_dir = "./DF_" + i + "/RA/Resources"
     shutil.copytree(src_dir, des_dir, copy_function = shutil.copy, dirs_exist_ok=True)
+
 print("Content from version directories copied to 'DF_version/RA/Resources/")
+
+shutil.make_archive("files", "zip", "Acad_Versions")
