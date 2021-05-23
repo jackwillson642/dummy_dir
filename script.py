@@ -1,7 +1,7 @@
 import os
 import shutil
 
-acad_dirs_list = os.listdir("./Acad_Versions/") # Storing names of all directories in a list
+acad_dirs_list = os.listdir("./AutoCAD_Versions/") # Storing names of all directories in a list
 
 new_dir_list = [] # Declaring a list that will contain all the new directories
 
@@ -16,11 +16,11 @@ for i in new_dir_list: # Copying DF to DF_2011
     print(i+" directory updated")
 
 print()
-for i in acad_dirs_list: # Copying contents of Acad_Versions/2011 to /Resources/
-    src_dir = "./Acad_Versions/" + i
+for i in acad_dirs_list: # Copying contents of AutoCAD_Versions/2011 to /Resources/
+    src_dir = "./AutoCAD_Versions/" + i
     des_dir = "./DF_" + i + "/ra/Resources"
     shutil.copytree(src_dir, des_dir, copy_function = shutil.copy, dirs_exist_ok=True)
-    print("Contents of Acad_Versions/"+i+" copied to DF_"+i+"/ra/Resources/")
+    print("Contents of AutoCAD_Versions/"+i+" copied to DF_"+i+"/ra/Resources/")
 
 import datetime as dt
 
