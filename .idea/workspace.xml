@@ -49,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Python.script">
     <configuration name="box" type="PythonConfigurationType" factoryName="Python">
@@ -135,7 +135,8 @@
       <workItem from="1621682055263" duration="15489000" />
       <workItem from="1621738674067" duration="10132000" />
       <workItem from="1621855626703" duration="6835000" />
-      <workItem from="1621875840576" duration="11251000" />
+      <workItem from="1621875840576" duration="11424000" />
+      <workItem from="1622305926199" duration="90000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Messages added">
       <created>1621683011539</created>
@@ -256,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621856332967</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Gui application created">
+      <created>1621938408810</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1621938408811</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,11 +311,12 @@
     <MESSAGE value="Removing timestamp file after zip creation" />
     <MESSAGE value="Directory name changed from Acad_Versions to AutoCad_Versions" />
     <MESSAGE value="Comments reformated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments reformated" />
+    <MESSAGE value="Gui application created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gui application created" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/dummy_dir$box.coverage" NAME="box Coverage Results" MODIFIED="1621701841189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dummy_dir$script.coverage" NAME="script Coverage Results" MODIFIED="1621938285339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dummy_dir$script.coverage" NAME="script Coverage Results" MODIFIED="1621938321430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dummy_dir$createzip.coverage" NAME="createzip Coverage Results" MODIFIED="1621690232065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dummy_dir$watch.coverage" NAME="watch Coverage Results" MODIFIED="1621744001243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
