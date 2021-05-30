@@ -136,7 +136,7 @@
       <workItem from="1621738674067" duration="10132000" />
       <workItem from="1621855626703" duration="6835000" />
       <workItem from="1621875840576" duration="11424000" />
-      <workItem from="1622305926199" duration="90000" />
+      <workItem from="1622305926199" duration="149000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Messages added">
       <created>1621683011539</created>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621938408811</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Gui application created">
+      <created>1622306050188</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1622306050188</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
