@@ -10,13 +10,19 @@ if __name__ == "__main__":
     my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
 
 def on_creation(event):
-    print(f"{event.src_path} created!")
+    if(f"{event.src_path}" != f"./log.txt"):
+        with open("log.txt", "a") as file:
+                file.write(f"{event.src_path} created!\n")
 
 def on_deletion(event):
-    print(f"{event.src_path} deleted!")
+    if(f"{event.src_path}" != f"./log.txt"):
+        with open("log.txt", "a") as file:
+            file.write(f"{event.src_path} deleted!\n")
 
 def on_modification(event):
-    print(f"{event.src_path} modified!")
+    if(f"{event.src_path}" != f"./log.txt"):
+        with open("log.txt", "a") as file:
+            file.write(f"{event.src_path} modified!\n")
 
 
 my_event_handler.on_created = on_creation
