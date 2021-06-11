@@ -1,19 +1,41 @@
 import os
+import shutil
+
+global acad_dirs_list
+global new_dirs_list
+
+acad_dirs_list = os.listdir("./AutoCAD_Versions/")  # Storing names of all directories in a list
+
+new_dirs_list = []  # Declaring a list that will contain all the new directories
+
+for i in acad_dirs_list:  # Initializing news_dir_list
+    new_dir = "DF_" + i
+    new_dirs_list.append(new_dir)
+
 
 def copy_files():
-    import shutil
+    global acad_dirs_list
+    global new_dirs_list
 
-    acad_dirs_list = os.listdir("./AutoCAD_Versions/")  # Storing names of all directories in a list
+    old_dirs_list = []
+    for i in new_dirs_list:
+        old_dirs_list.append(i + "_old")
 
-    new_dir_list = []  # Declaring a list that will contain all the new directories
+    text_block.insert(INSERT, "\n")
+    for i in old_dirs_list:
+        shutil.rmtree(os.path.join("./", i), ignore_errors=True)
+        text_block.insert(INSERT, (i + " deleted\n"))
 
-    for i in acad_dirs_list:  # Initializing new_dir_list
-        new_dir = "DF_" + i
-        new_dir_list.append(new_dir)
+    text_block.insert(INSERT, "\n")
+    for i in new_dirs_list:
+        src = i
+        dest = "./" + i + "_old"
+        shutil.copytree(src, dest, dirs_exist_ok=False)
+        text_block.insert(INSERT, (src + " copied to " + dest + "\n3"))
 
-    for i in new_dir_list:  # Copying DF to DF_2011
+    for i in new_dirs_list:  # Copying DF to DF_2011
         des_dir = "./" + i
-        shutil.copytree("./DF", des_dir, dirs_exist_ok=True)  # dirs_exist_ok=True doesn't break the code if the directories already exist.
+        shutil.copytree("./DF", des_dir, dirs_exist_ok=True)
         text_block.insert(INSERT, (i + " directory updated/copied\n"))
 
     text_block.insert(INSERT, "\n")
@@ -21,50 +43,75 @@ def copy_files():
         src_dir = "./AutoCAD_Versions/" + i
         des_dir = "./DF_" + i + "/ra/Resources"
         shutil.copytree(src_dir, des_dir, copy_function=shutil.copy, dirs_exist_ok=True)
-        text_block.insert(INSERT, ("Contents of AutoCAD_Versions/" + i + " copied to DF_" + i + "/ra/Resources/" + "\n"))
+        text_block.insert(INSERT,
+                          ("Contents of AutoCAD_Versions/" + i + " copied to DF_" + i + "/ra/Resources/" + "\n"))
+
 
 def zip_files():
-    import shutil
-
     import datetime as dt
 
-    acad_dirs_list = os.listdir("./AutoCAD_Versions/")  # Storing names of all directories in a list
-
-    new_dir_list = []  # Declaring a list that will contain all the new directories
-
-    for i in acad_dirs_list:  # Initializing new_dir_list
-        new_dir = "DF_" + i
-        new_dir_list.append(new_dir)
+    global acad_dirs_list
+    global new_dirs_list
 
     x = dt.datetime.now()
 
-    datetime_file_name = x.strftime("%d") + "-" + x.strftime("%m") + "-" + x.strftime("%y") + "_" + x.strftime(
-        "%H") + "-" + x.strftime("%M") + ".txt"
-    for i in new_dir_list:  # Creating a file with the time stamp as the file name. Doesn't work if the file already exists.
+    global datetime_file_name
+    datetime_file_name = x.strftime("%d-%m-%y_%H-%M.txt")
+
+    for i in new_dirs_list:  # Creating a file with the time stamp as the file name. Doesn't work if the file already exists.
         open("./" + i + "/" + datetime_file_name, "x")
 
     text_block.insert(INSERT, "\n")
-    for i in new_dir_list:  # Creating zip file
-        shutil.make_archive(i, "zip", i)
-        text_block.insert(INSERT, (i + " compressed into " + i + ".zip" + "\n"))
-        os.remove("./" + i + "/" + datetime_file_name)  # Removing timestamp file after zip creation
+    print("Files added:")
+    for i in new_dirs_list:
+        shutil.make_archive(i, "zip", i)  # Creating zip file
+        text_block.insert(INSERT, (i + " compressed into " + i + ".zip" + "\n"))  # Notifying creation of zip
 
-def compare_files():
-    import filecmp
+        dir_left = i + "_old"
+        dir_right = i
+        compare(dir_left, dir_right)
+        # print(compare(dir_
+        # left, dir_right))
 
-    acad_dirs_list = os.listdir("./AutoCAD_Versions/")  # Storing names of all directories in a list
 
-    new_dir_list = []  # Declaring a list that will contain all the new directories
+#        os.remove("./" + i + "/" + datetime_file_name)  # Removing timestamp file after zip creation
 
-    for i in acad_dirs_list:  # Initializing new_dir_list
-        new_dir = "DF_" + i
-        new_dir_list.append(new_dir)
 
-    for i in new_dir_list:
-        dir1 = "./DF_old"
-        dir2 = i
-        comparison = filecmp.cmp(dir1, dir2, shallow=True)
-        text_block.insert(INSERT, comparison)
+def compare(dir1, dir2):
+    from filecmp import dircmp
+    global datetime_file_name
+    file = open("./" + i + "/" + datetime_file_name, "a")
+
+    global acad_dirs_list
+    global new_dirs_list
+
+    file.write("Files added:")
+    comparison = dircmp(dir1, dir2, ignore=None)
+    for j in comparison.right_only:
+        if os.path.isdir(j):
+            new_dir1 = dir1 + j
+            new_dir2 = dir2 + j
+            compare(new_dir1, new_dir2)
+        file.write(j + "\n")
+
+    file.write("Files removed:")
+    for j in comparison.left_only:
+        if os.path.isdir(j):
+            new_dir1 = dir1 + j
+            new_dir2 = dir2 + j
+            compare(new_dir1, new_dir2)
+        file.write(j + "\n")
+
+    file.write("Files modified:")
+    for j in comparison.diff_files:
+        if os.path.isdir(j):
+            new_dir1 = dir1 + j
+            new_dir2 = dir2 + j
+            compare(new_dir1, new_dir2)
+        file.write(j + "\n")
+
+    file.close()
+
 
 from tkinter import *
 
@@ -78,11 +125,8 @@ copy_button.grid(row=0, column=0, ipadx=15)
 zip_button = Button(root, command=zip_files, text="Zip", width=20, height=5)
 zip_button.grid(row=0, column=1, ipadx=15)
 
-compare_button = Button(root, command=compare_files, text="Compare", width=20, height=5)
-compare_button.grid(row=0, column=2, ipadx=15)
-
 text_width = 60 + 45
 text_block = Text(root, width=text_width, font="Helvetica")
-text_block.grid(row=1, column=0, columnspan=3, ipadx=0)
+text_block.grid(row=1, column=0, columnspan=2, ipadx=0)
 
 root.mainloop()
