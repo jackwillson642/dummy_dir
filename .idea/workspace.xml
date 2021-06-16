@@ -153,7 +153,7 @@
       <workItem from="1623122950231" duration="2137000" />
       <workItem from="1623164110822" duration="6471000" />
       <workItem from="1623307791840" duration="4483000" />
-      <workItem from="1623386246831" duration="1436000" />
+      <workItem from="1623386246831" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="Notification Messages added">
       <created>1621683011539</created>
@@ -302,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622634733218</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Compare functionality added">
+      <created>1623387981196</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1623387981196</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +358,8 @@
     <MESSAGE value="Gui application created" />
     <MESSAGE value="Routine Commit" />
     <MESSAGE value="Imports optimized" />
-    <option name="LAST_COMMIT_MESSAGE" value="Imports optimized" />
+    <MESSAGE value="Compare functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compare functionality added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/dummy_dir$box.coverage" NAME="box Coverage Results" MODIFIED="1621701841189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
