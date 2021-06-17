@@ -29,7 +29,7 @@ print("")
 for new_dir in new_dirs_list:
     src = new_dir
     dest = "./" + new_dir + "_old"
-    shutil.copytree(src, dest, copy_function=shutil.copy2, dirs_exist_ok=False)
+    shutil.move(src, dest, copy_function=shutil.copy2)
     print((src + " copied to " + dest + ""))
 
 # Copying DF to DF_2011
@@ -116,4 +116,4 @@ for new_dir in new_dirs_list:
 for new_dir in new_dirs_list:
     shutil.make_archive(new_dir, "zip", new_dir)  # Creating zip file
     print((new_dir + " compressed into " + new_dir + ".zip" + ""))  # Notifying creation of zip
-#     os.remove("./" + new_dir + "/" + datetime_file_name)  # Removing timestamp file after zip creation
+    os.remove("./" + new_dir + "/" + datetime_file_name)  # Removing timestamp file after zip creation
